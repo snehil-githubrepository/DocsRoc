@@ -1,5 +1,3 @@
-_This is my we use Quill because it lets us track all the small changes with delta instead of copying the whole document when a change is made_
-
 # DocsRoc
 
 DocsRoc is a collaborative document editing platform aimed at revolutionizing team collaboration on documents. Built with intuitive features and real-time synchronization, it enables multiple users to edit, comment, and collaborate on documents simultaneously, fostering efficient teamwork regardless of location.
@@ -24,11 +22,15 @@ DocsRoc is a collaborative document editing platform aimed at revolutionizing te
 To get started with DocsRoc, follow these steps:
 
 1. **Installation:** git clone https://github.com/snehil-githubrepository/DocsRoc.git
-   > cd client --> `npm install`
-   > cd server --> `npm install`
-   > assign your own port numbers
+   - cd client --> `npm install`
+   - cd server --> `npm install`
+   - assign your own port numbers
 2. **Usage:** Real-time collaborations with your friends and colleagues for documents.
 3. **Contributing:** We welcome contributions! Fork the repository, make changes, and submit pull requests.
+
+### Details on Used libraries
+
+_This is why we use Quill because it lets us track all the small changes with delta instead of copying the whole document when a change is made_
 
 ### You're invited to join and contribute to this project on GitHub.
 
