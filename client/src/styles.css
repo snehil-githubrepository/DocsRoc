@@ -1,0 +1,74 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9fbfd;
+  margin: 0;
+}
+/* rgb(66, 109, 238) */
+.appbar {
+  background-color: rgb(66, 109, 238);
+}
+
+.container .ql-editor {
+  width: 21cm;
+  min-height: 29.7cm;
+  padding: 1in;
+  margin: 1rem;
+  border-radius: 1%;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+
+.container .ql-container.ql-snow {
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+.container .ql-toolbar.ql-snow {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Ensure it's above the document */
+  background-color: #edf2fa;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjusted shadow for a subtle effect */
+  padding: 8px 12px; /* Padding for the toolbar */
+}
+
+@page {
+  /* all this for dictating the printing page  */
+  margin: 1in;
+}
+
+/* media only on printing of the page */
+@media print {
+  body {
+    background: none;
+  }
+
+  title {
+    display: none;
+  }
+
+  .container .ql-editor {
+    width: 16cm;
+    height: 24.3cm;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    align-self: flex-start;
+  }
+
+  .container .ql-toolbar.ql-snow {
+    display: none;
+  }
+
+  .appbar {
+    display: none;
+  }
+}
