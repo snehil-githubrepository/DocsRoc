@@ -37,7 +37,7 @@ export default function TextEditor() {
 
   useEffect(() => {
     //connects socket
-    const s = io("https://docsroc-api.onrender.com"); //backend
+    const s = io("https://docs-roc-api.vercel.app/"); //backend
     setSocket(s);
 
     //disconnects when we no longer need it
