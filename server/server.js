@@ -10,14 +10,14 @@ mongoose.connect(process.env.MONGO_URI, {
 
 //https://docsroc.vercel.app/
 
-const io = require("socket.io")(3001, {
-  cors: {
-    origin: process.env.CLIENT_URI,
-    method: ["GET", "POST"],
-  },
-});
+// const io = require("socket.io")(3001, {
+//   cors: {
+//     origin: process.env.CLIENT_URI,
+//     method: ["GET", "POST"],
+//   },
+// });
 
-const defaultVal = "";
+// const defaultVal = "";
 
 app.get("/", (req, res) => {
   res.send("Hello");
@@ -42,34 +42,36 @@ app.get("/", (req, res) => {
 //   }
 // });
 
-io.on("connection", (socket) => {
-  socket.on("get-document", async (documentId) => {
-    const document = await findOrCreateDocument(documentId);
-    //makes its own room when we join
-    socket.join(documentId);
-    socket.emit("load-document", document.data);
+// io.on("connection", (socket) => {
+//   socket.on("get-document", async (documentId) => {
+//     const document = await findOrCreateDocument(documentId);
+//     //makes its own room when we join
+//     socket.join(documentId);
+//     socket.emit("load-document", document.data);
 
-    socket.on("send-changes", (delta) => {
-      //broadcasts everyone the changes except for us
-      socket.broadcast.to(documentId).emit("receive-changes", delta);
-    });
+//     socket.on("send-changes", (delta) => {
+//       //broadcasts everyone the changes except for us
+//       socket.broadcast.to(documentId).emit("receive-changes", delta);
+//     });
 
-    socket.on("save-document", async (data) => {
-      await Schema.findByIdAndUpdate(documentId, { data });
-    });
-  });
-});
+//     socket.on("save-document", async (data) => {
+//       await Schema.findByIdAndUpdate(documentId, { data });
+//     });
+//   });
+// });
 
-async function findOrCreateDocument(id) {
-  if (id == null) return;
-  //finds if already a doc exist in db by this id
-  const document = await Schema.findById(id);
-  if (document) return document;
+// async function findOrCreateDocument(id) {
+//   if (id == null) return;
+//   //finds if already a doc exist in db by this id
+//   const document = await Schema.findById(id);
+//   if (document) return document;
 
-  return await Schema.create({ _id: id, data: defaultVal });
-}
+//   return await Schema.create({ _id: id, data: defaultVal });
+// }
 
-const PORT = 3002; // Change the port number if needed
+const PORT = 3000; // Change the port number if needed
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+module.exports = app;
