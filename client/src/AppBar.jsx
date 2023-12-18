@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { useParams } from "react-router-dom";
 
 export default function GoogleDocsAppBar() {
@@ -14,7 +15,7 @@ export default function GoogleDocsAppBar() {
   const handleTitleChange = (event) => {
     setDocumentTitle(event.target.value);
   };
-  
+
   // rgb(75, 140, 250)
   const buttonStyle = {
     marginLeft: "8px",
@@ -135,6 +136,18 @@ export default function GoogleDocsAppBar() {
             }}
           />
         </Typography>
+        <IconButton
+          style={{
+            color: "white",
+            backgroundColor: "rgb(66, 109, 238)",
+            borderRadius: "50%",
+            padding: "8px",
+          }}
+          href="https://github.com/snehil-githubrepository/docsroc"
+          target="_blank"
+        >
+          <GitHubIcon style={{ fontSize: "25px" }} />
+        </IconButton>
         <IconButton style={buttonStyle} onClick={handleShareClick}>
           Share
         </IconButton>
