@@ -8,6 +8,8 @@ mongoose.connect(process.env.MONGO_URI, {
   dbName: "DocsRoc",
 });
 
+//https://docsroc.vercel.app/
+
 const io = require("socket.io")(3001, {
   cors: {
     origin: process.env.CLIENT_URI,
@@ -16,6 +18,10 @@ const io = require("socket.io")(3001, {
 });
 
 const defaultVal = "";
+
+app.get("/", () => {
+  console.log("app is running successfully");
+});
 
 // Endpoint to retrieve a document by ID
 // app.get("/documents/:id", async (req, res) => {
@@ -63,7 +69,7 @@ async function findOrCreateDocument(id) {
   return await Schema.create({ _id: id, data: defaultVal });
 }
 
-// const PORT = 3002; // Change the port number if needed
-// app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}`);
-// });
+const PORT = 3002; // Change the port number if needed
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
