@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { useParams } from "react-router-dom";
@@ -119,7 +118,7 @@ export default function GoogleDocsAppBar() {
     <div className="appbar">
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="menu">
-          <MenuIcon />
+          <img src="/docs.svg" />
         </IconButton>
         <Typography variant="h6" component="div" style={{ flexGrow: 1 }}>
           <input

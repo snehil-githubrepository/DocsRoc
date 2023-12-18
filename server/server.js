@@ -2,10 +2,9 @@ const mongoose = require("mongoose");
 const Schema = require("./Schema");
 const express = require("express");
 const app = express();
+require("dotenv").config();
 
-mongoose.connect("mongodb://localhost:27017", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+mongoose.connect(process.env.MONGO_URI, {
   dbName: "DocsRoc",
 });
 
