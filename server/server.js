@@ -19,8 +19,8 @@ const io = require("socket.io")(3001, {
 
 const defaultVal = "";
 
-app.get("/", () => {
-  console.log("app is running successfully");
+app.get("/", (req, res) => {
+  res.send("Hello");
 });
 
 // Endpoint to retrieve a document by ID
