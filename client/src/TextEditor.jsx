@@ -37,7 +37,7 @@ export default function TextEditor() {
 
   useEffect(() => {
     //connects socket
-    const s = io("http://localhost:3001");
+    const s = io("https://docsroc-api.onrender.com"); //backend
     setSocket(s);
 
     //disconnects when we no longer need it

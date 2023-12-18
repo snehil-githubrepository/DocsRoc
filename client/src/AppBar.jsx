@@ -14,14 +14,15 @@ export default function GoogleDocsAppBar() {
   const handleTitleChange = (event) => {
     setDocumentTitle(event.target.value);
   };
-
+  
+  // rgb(75, 140, 250)
   const buttonStyle = {
     marginLeft: "8px",
     padding: "2px 8px",
-    color: "white",
+    color: "rgb(66, 109, 238)",
     boxSizing: "border-box",
-    backgroundColor: "rgb(35, 76, 199)",
-    border: "0.5px solid black",
+    backgroundColor: "white",
+    border: "0.5px solid white",
     borderRadius: "8%",
     transition: "background-color 0.3s ease",
     "&:hover": {
