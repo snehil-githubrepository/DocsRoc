@@ -34,10 +34,11 @@ export default function TextEditor() {
     // send server our id so it can attach us to documentId and send saved document if exist
     socket.emit("get-document", documentId);
   }, [socket, quill, documentId]);
-
+  
+  // https://docs-roc-api.vercel.app/
   useEffect(() => {
     //connects socket
-    const s = io("https://docs-roc-api.vercel.app/"); //backend
+    const s = io("http://localhost:3001"); //backend
     setSocket(s);
 
     //disconnects when we no longer need it
